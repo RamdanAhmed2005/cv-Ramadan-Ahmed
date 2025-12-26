@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramadan Ahmed Ramadan | Full Stack Web Developer</title>
+  <link rel="website icon" type="" href="https://miro.medium.com/1*7k-C5OKr7iST_LaheCLS6A.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#0f172a;color:#e5e7eb;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    header h1{font-size:3rem;color:#38bdf8}
+    header h2{font-size:1.4rem;font-weight:400;margin:15px 0;color:#cbd5f5}
+    header p{max-width:700px;margin:20px auto;color:#94a3b8}
+
+    .btns a{
+      display:inline-block;
+      margin:10px;
+      padding:12px 28px;
+      border-radius:30px;
+      background:#38bdf8;
+      color:#020617;
+      font-weight:600;
+      transition:0.3s;
+    }
+    .btns a:hover{transform:translateY(-3px);background:#0ea5e9}
+
+    section{padding:80px 10%}
+    section h3{
+      font-size:2rem;
+      margin-bottom:40px;
+      color:#38bdf8;
+      text-align:center;
+    }
+
+    .about, .education, .certs{max-width:900px;margin:auto;text-align:center}
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:20px;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .skill{
+      background:#020617;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      transition:0.3s;
+    }
+    .skill:hover{transform:translateY(-6px)}
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .project{
+      background:#020617;
+      padding:25px;
+      border-radius:20px;
+      min-height:200px;
+      position:relative;
+    }
+
+    .project span{
+      position:absolute;
+      bottom:20px;
+      right:20px;
+      font-size:0.9rem;
+      color:#38bdf8;
+    }
+
+    footer{
+      background:#020617;
+      padding:40px 10%;
+      text-align:center;
+    }
+
+    footer p{color:#94a3b8}
+
+    @media(max-width:768px){
+      header h1{font-size:2.2rem}
+      header h2{font-size:1.1rem}
+    }
+    .certs-pdf{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.certs-pdf embed{
+  width:250px;
+  height:400px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Ramadan Ahmed Ramadan</h1>
+      <h2>Full Stack Web Developer</h2>
+      <p>
+        Passionate Full Stack Web Developer with strong experience in both Frontend and Backend development.
+        I focus on building modern, responsive, and high-performance web applications using the latest technologies.
+      </p>
+      <div class="btns">
+        <a href="mailto:ramadanahmed20186@gmail.com">Email Me</a>
+        <a href="https://github.com/RamdanAhmed2005" target="_blank">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h3>About Me</h3>
+    <div class="about">
+      <p>
+        I am a motivated Full Stack Web Developer from Alexandria.
+        I have solid knowledge in Frontend and Backend technologies and a strong passion for learning and self-development.
+        I enjoy transforming ideas into real digital products with clean code and attractive UI/UX.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">React</div>
+      <div class="skill">Vue.js</div>
+      <div class="skill">jQuery</div>
+      <div class="skill">PHP</div>
+      <div class="skill">My SQL</div>
+      <div class="skill">Python</div>
+      <div class="skill">Flutter</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Projects</h3>
+    <div class="projects">
+      <div class="project">
+        <h4>Project One</h4>
+        <p>Project description will be added later.</p>
+        <span>HTML / CSS / JS</span>
+      </div>
+      <div class="project">
+        <h4>Project Two</h4>
+        <p>Project description will be added later.</p>
+        <span>Frontend / Backend</span>
+      </div>
+      <div class="project">
+        <h4>Project Three</h4>
+        <p>Project description will be added later.</p>
+        <span>Full Stack</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Education</h3>
+    <div class="education">
+      <p>
+        Diploma Refrigeration and Air Conditioning (Jdarat System)<br>
+        Graduation Year : 2022
+      </p>
+    </div>
+  </section>
+  <section>
+    <h3>Certificates</h3>
+    <div class="certs-pdf">
+      <embed src="pdf.pdf" type="application/pdf">
+      <embed src="pdf2.pdf" type="application/pdf">
+      <embed src="pdf3.pdf" type="application/pdf">
+      <embed src="pdf4.pdf" type="application/pdf">
+    </div>
+  </section>
+  
+  
+  <footer>
+    <p>
+      Alexandria, Egypt | Phone: 01107754317 / 01283813775<br>
+      © 2025 Ramadan Ahmed Ramadan
+    </p>
+  </footer>
+
+</body>
+</html>
