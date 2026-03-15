@@ -48,7 +48,7 @@
 
     .about, .education, .certs{max-width:900px;margin:auto;text-align:center}
 
-    /* Skills Styling with Official Colors */
+    /* Skills Styling */
     .skills-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
@@ -73,20 +73,19 @@
       margin-bottom: 12px;
     }
 
-    /* Brand-Specific Colors */
     .fa-html5 { color: #e34f26; }
     .fa-css3-alt { color: #1572b6; }
     .fa-js { color: #f7df1e; }
     .fa-bootstrap { color: #7952b3; }
     .fa-react { color: #61dafb; }
     .fa-vuejs { color: #4fc08d; }
-    .fa-code { color: #0769ad; } /* jQuery icon */
+    .fa-code { color: #0769ad; }
     .fa-php { color: #777bb4; }
-    .fa-database { color: #4479a1; } /* MySQL icon */
+    .fa-database { color: #4479a1; }
     .fa-python { color: #3776ab; }
-    .fa-mobile-alt { color: #02569b; } /* Flutter icon */
+    .fa-mobile-alt { color: #02569b; }
 
-    /* Projects Styling */
+    /* Projects Styling Updated */
     .projects{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -100,25 +99,59 @@
 
     .project{
       background:#020617;
-      padding:25px;
+      padding:20px;
       border-radius:20px;
-      min-height:200px;
+      min-height:100%;
       position:relative;
       border: 1px solid transparent;
+      overflow: hidden;
     }
 
     .project:hover {
       border-color: #38bdf8;
-      transform: scale(1.02);
+      transform: translateY(-5px);
       box-shadow: 0 10px 40px rgba(56, 189, 248, 0.1);
+    }
+
+    /* Project Image Container */
+    .project-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      background: #1e293b;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .project:hover .project-img img {
+      transform: scale(1.1);
+    }
+
+    .project h4 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .project p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 40px;
     }
 
     .project span{
       position:absolute;
       bottom:20px;
       right:20px;
-      font-size:0.9rem;
+      font-size:0.8rem;
       color:#38bdf8;
+      font-weight: 600;
     }
 
     footer{
@@ -133,6 +166,7 @@
       header h1{font-size:2.2rem}
       header h2{font-size:1.1rem}
     }
+
     .certs-pdf{
       display:flex;
       gap:20px;
@@ -167,7 +201,7 @@
     </div>
   </header>
 
-  <section>
+  <section id="about">
     <h3>About Me</h3>
     <div class="about">
       <p>
@@ -178,7 +212,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <h3>Skills</h3>
     <div class="skills-grid">
       <div class="skill"><i class="fab fa-html5"></i> HTML</div>
@@ -195,36 +229,45 @@
     </div>
   </section>
 
-  <section>
+  <section id="projects">
     <h3>Projects</h3>
     <div class="projects">
-      <a href="https://your-project-link-1.com" target="_blank" class="project-link">
+      <a href="file:///D:/ZRR%20Academy/index.html" target="_blank" class="project-link">
         <div class="project">
-          <h4>Project One</h4>
-          <p>Project description will be added later.</p>
+          <div class="project-img">
+            <img src="ZRR.png" alt="ZRR Academy">
+          </div>
+          <h4>ZRR Academy</h4>
+          <p>ZRR Academy – Empowering the next generation of Egyptian developers. I built this platform as a definitive guide for anyone starting their coding journey in 2026.</p>
           <span>HTML / CSS / JS</span>
         </div>
       </a>
 
-      <a href="https://your-project-link-2.com" target="_blank" class="project-link">
+      <a href="#" target="_blank" class="project-link">
         <div class="project">
-          <h4>Project Two</h4>
-          <p>Project description will be added later.</p>
+          <div class="project-img">
+            <img src="https://via.placeholder.com/400x225/1e293b/38bdf8?text=Project+Two" alt="Project Two">
+          </div>
+          <h4>Professional E-commerce</h4>
+          <p>A full-featured e-commerce store with modern UI and smooth user experience. (Work in progress to be featured in my CV).</p>
           <span>Frontend / Backend</span>
         </div>
       </a>
 
-      <a href="https://your-project-link-3.com" target="_blank" class="project-link">
+      <a href="#" target="_blank" class="project-link">
         <div class="project">
-          <h4>Project Three</h4>
-          <p>Project description will be added later.</p>
+          <div class="project-img">
+            <img src="https://via.placeholder.com/400x225/1e293b/38bdf8?text=Project+Three" alt="Project Three">
+          </div>
+          <h4>Interactive Web App</h4>
+          <p>A dynamic web application focusing on performance and responsiveness using the latest frameworks.</p>
           <span>Full Stack</span>
         </div>
       </a>
     </div>
   </section>
 
-  <section>
+  <section id="education">
     <h3>Education</h3>
     <div class="education">
       <p>
@@ -234,7 +277,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="certificates">
     <h3>Certificates</h3>
     <div class="certs-pdf">
       <embed src="pdf.pdf" type="application/pdf">
@@ -247,7 +290,7 @@
   <footer>
     <p>
       Alexandria, Egypt | Phone: 01107754317 / 01283813775<br>
-      © 2025 Ramadan Ahmed Ramadan
+      © 2026 Ramadan Ahmed Ramadan
     </p>
   </footer>
 
