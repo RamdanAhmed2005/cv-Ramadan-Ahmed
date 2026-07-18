@@ -727,6 +727,26 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s 0.1s, transform 0.6s 0.1s;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -14px;
+      height: 3px;
+      width: 64px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent3), var(--accent2));
+      background-size: 200% 100%;
+      animation: titleUnderlineShift 3s linear infinite;
+    }
+
+    @keyframes titleUnderlineShift {
+      0%   { background-position: 0% 0; }
+      100% { background-position: 200% 0; }
     }
 
     .section-label.visible,
@@ -915,6 +935,15 @@
     .fa-database { color: #4479a1; }
     .fa-python { color: #3776ab; }
     .fa-mobile-alt { color: #54c5f8; }
+    .fa-pen-nib { color: #f472b6; }
+    .fa-adobe { color: #ff0000; }
+
+    .skill-card i {
+      transition: transform 0.4s ease;
+    }
+    .skill-card:hover i {
+      transform: rotate(-8deg) scale(1.15);
+    }
 
     /* ─── PROJECTS ─── */
     .projects-grid {
@@ -1015,8 +1044,18 @@
     /* ─── EDUCATION ─── */
     #education { background: var(--bg2); }
 
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 700px) {
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+
     .edu-card {
-      max-width: 700px;
       background: var(--bg3);
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -1042,6 +1081,12 @@
       font-size: 1.5rem;
       color: var(--accent3);
       flex-shrink: 0;
+      animation: eduIconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes eduIconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .edu-year {
@@ -1083,6 +1128,19 @@
 
     .cert-embed.visible { opacity: 1; transform: translateY(0); }
     .cert-embed:hover { border-color: var(--accent); box-shadow: 0 0 40px var(--glow); }
+
+    .cert-embed::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      transform: translateX(-130%);
+      transition: transform 0.7s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .cert-embed:hover::after { transform: translateX(130%); }
 
     .cert-embed img {
       width: 240px;
@@ -1373,6 +1431,8 @@
       outline: none;
       transition: border-color 0.35s, box-shadow 0.35s, background 0.35s;
       resize: none;
+      unicode-bidi: plaintext;
+      text-align: start;
       position: relative;
     }
 
@@ -1865,6 +1925,16 @@
           <span>C++</span>
         </div>
 
+        <div class="skill-card">
+          <i class="fas fa-pen-nib"></i>
+          <span>UI/UX Design</span>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-adobe"></i>
+          <span>Adobe (PS / XD / AI)</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1924,20 +1994,22 @@
   <section id="education">
     <div class="section-label reveal">// 04 — EDUCATION</div>
     <h2 class="section-title reveal">Education</h2>
-    <div class="edu-card reveal">
-      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div>
-        <div class="edu-year">Graduation Year: 2022</div>
-        <div class="edu-degree">Diploma — Refrigeration & Air Conditioning</div>
-        <div class="edu-sub">Jdarat System · Alexandria, Egypt</div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div>
+          <div class="edu-year">Graduation Year: 2022</div>
+          <div class="edu-degree">Diploma — Refrigeration & Air Conditioning</div>
+          <div class="edu-sub">Jdarat System · Alexandria</div>
+        </div>
       </div>
-    </div>
-    <div class="edu-card reveal" style="transition-delay:0.1s">
-      <div class="edu-icon"><i class="fas fa-code"></i></div>
-      <div>
-        <div class="edu-year">Programming Course</div>
-        <div class="edu-degree">Software Development Track</div>
-        <div class="edu-sub">Black Horse Academy · Alexandria, Egypt</div>
+      <div class="edu-card reveal" style="transition-delay:0.1s">
+        <div class="edu-icon"><i class="fas fa-code"></i></div>
+        <div>
+          <div class="edu-year">Programming Course</div>
+          <div class="edu-degree">Software Development Track</div>
+          <div class="edu-sub">Black Horse Academy · Alexandria</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1948,9 +2020,9 @@
     <h2 class="section-title reveal">Certificates</h2>
     <div class="certs-grid">
       <div class="cert-embed reveal" style="transition-delay:0ms"><img src="1.jpeg" alt="Certificate 1"></div>
-      <div class="cert-embed reveal" style="transition-delay:0.1s"><img src="3.jpeg" alt="Certificate 2"></div>
+      <div class="cert-embed reveal" style="transition-delay:0.1s"><img src="Screenshot (47).png" alt="Certificate 2"></div>
       <div class="cert-embed reveal" style="transition-delay:0.2s"><img src="2.jpeg" alt="Certificate 3"></div>
-      <div class="cert-embed reveal" style="transition-delay:0.3s"><img src="4.jpeg" alt="Certificate 4"></div>
+      <div class="cert-embed reveal" style="transition-delay:0.3s"><img src="3.png" alt="Certificate 4"></div>
     </div>
   </section>
 
@@ -1977,19 +2049,19 @@
         <div class="contact-nav-fields">
           <div class="field-group">
             <i class="fas fa-user field-icon"></i>
-            <input type="text" id="wa-name" placeholder=" " />
+            <input type="text" id="wa-name" dir="auto" placeholder=" " />
             <label for="wa-name">your name  </label>
           </div>
 
           <div class="field-group">
             <i class="fas fa-phone field-icon"></i>
-            <input type="tel" id="wa-phone" placeholder=" " />
+            <input type="tel" id="wa-phone" dir="auto" placeholder=" " />
             <label for="wa-phone"> phone number</label>
           </div>
 
           <div class="field-group">
             <i class="fas fa-comment-dots field-icon"></i>
-            <textarea id="wa-msg" maxlength="400" placeholder=" "></textarea>
+            <textarea id="wa-msg" dir="auto" maxlength="400" placeholder=" "></textarea>
             <label for="wa-msg">Message</label>
             <span class="char-counter" id="waCounter">0/400</span>
           </div>
